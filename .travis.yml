@@ -12,3 +12,15 @@ before_install:
 script: 
   - docker run -e CI=true kartik0912/docker-react npm run test
 
+# to configure travis CI to deploy our application after the tests are run
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"    
+  app: "docker-react"
+  env: "Docker-react"
+  bucket_name: "elasticbeanstalk-us-east-1-659311134658"
+  bucket_path: "docker-react"
+  on: 
+    branch: main
+  access_key_id: "AKIAZTAQBQ7BCJPLN2N7"
+  secret_access_key: "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"
