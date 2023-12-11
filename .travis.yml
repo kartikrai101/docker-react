@@ -6,7 +6,7 @@ services:
 
 # series of commands that get executed before our tests are run 
 before_install: 
-  - docker run -t kartik0912/docker-react -f Dockerfile.dev . 
+  - docker build -t kartik0912/docker-react -f Dockerfile.dev . 
 
 # contains all the commands required to run our test suite 
 script: 
